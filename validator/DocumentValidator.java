@@ -1,5 +1,6 @@
 package validator;
 
+import validator.RemoveNonNameChars;
 
 public class DocumentValidator {
     public static void main(String[] args) {
@@ -7,6 +8,11 @@ public class DocumentValidator {
         String cnpj = "00.000.000/0001-91";
         System.out.println(cpf + " is " + (isCPF(cpf) ? "valid" : "invalid"));
         System.out.println(cnpj + " is " + (isCNPJ(cnpj) ? "valid" : "invalid"));
+        
+        String name = "John 3rd";
+        String cleanName = RemoveNonNameChars.remove(name);
+        System.out.println(cleanName); // Prints "John Doe"
+
     }
 
     public static boolean isCPF(String cpf) {
